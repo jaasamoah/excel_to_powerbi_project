@@ -1,116 +1,116 @@
-# Analytics Pipeline: Spreadsheets to Interactive Insights  
+# Analytics Workflow: From Data Sheets to Dynamic Insights  
 
 ![excel-powerbi-workflow](assets/images/kaggle_to_powerbi.gif)  
 
 ---
 
-## Contents Quicknav  
-- [Project Goal](#project-goal)  
-- [Dataset Origin](#dataset-origin)  
-- [Workflow Phases](#workflow-phases)  
-- [Dashboard Architecture](#dashboard-architecture)  
-  - [Interface Blueprint](#interface-blueprint)  
-  - [Tech Stack](#tech-stack)  
-- [Implementation Process](#implementation-process)  
-  - [Logic Outline](#logic-outline)  
-  - [Initial Dataset Review](#initial-dataset-review)  
-  - [Data Refinement](#data-refinement)  
-  - [Query Implementation](#query-implementation)  
-- [Quality Assurance](#quality-assurance)  
-  - [Validation Checks](#validation-checks)  
-- [Interactive Reporting](#interactive-reporting)  
-  - [Dashboard Output](#dashboard-output)  
-  - [Key Metrics](#key-metrics)  
-- [Insights Generation](#insights-generation)  
-  - [Key Discoveries](#key-discoveries)  
-  - [ROI Verification](#roi-verification)  
-  - [Pattern Recognition](#pattern-recognition)  
-- [Strategic Guidance](#strategic-guidance)  
-  - [Expected Returns](#expected-returns)  
-  - [Execution Roadmap](#execution-roadmap)  
+## Navigation Guide  
+- [Objective Statement](#objective-statement)  
+- [Data Source Overview](#data-source-overview)  
+- [Process Stages](#process-stages)  
+- [Dashboard Framework](#dashboard-framework)  
+  - [Layout Design](#layout-design)  
+  - [Technology Components](#technology-components)  
+- [Execution Strategy](#execution-strategy)  
+  - [Workflow Logic](#workflow-logic)  
+  - [Preliminary Data Assessment](#preliminary-data-assessment)  
+  - [Data Optimization](#data-optimization)  
+  - [Query Execution](#query-execution)  
+- [Quality Validation](#quality-validation)  
+  - [Data Integrity Tests](#data-integrity-tests)  
+- [Dynamic Reporting](#dynamic-reporting)  
+  - [Visualization Results](#visualization-results)  
+  - [Core Measurements](#core-measurements)  
+- [Strategic Analysis](#strategic-analysis)  
+  - [Critical Findings](#critical-findings)  
+  - [Impact Validation](#impact-validation)  
+  - [Trend Identification](#trend-identification)  
+- [Actionable Recommendations](#actionable-recommendations)  
+  - [Projected Outcomes](#projected-outcomes)  
+  - [Implementation Plan](#implementation-plan)  
 
 ---
 
-## Project Goal  
-**Core Challenge**  
-The Marketing Lead seeks to identify leading UK YouTubers for 2024 campaign partnerships through quantifiable metrics analysis.  
+## Objective Statement  
+**Primary Challenge**  
+The Marketing Team requires data-driven identification of top UK YouTube creators for 2024 campaign collaborations through measurable analytics.  
 
-**Solution Framework**  
-Develop an analytics dashboard tracking:  
-- Audience size metrics  
-- Content volume statistics  
-- Engagement performance indicators  
+**Strategic Approach**  
+Create an interactive reporting system monitoring:  
+- Follower growth metrics  
+- Content production frequency  
+- Audience interaction rates  
 
-**User Perspective**  
-> *As campaign strategist, I need to quickly identify high-impact channels based on measurable performance data to optimize partnership decisions.*  
-
----
-
-## Dataset Origin  
-**Required Information**  
-- Channel identifiers  
-- Subscriber metrics  
-- Viewership statistics  
-- Content volume data  
-
-**Source**: [Kaggle dataset](https://www.kaggle.com/datasets/bhavyadhingra00020/top-100-social-media-influencers-2024-countrywise?resource=download) (Excel format)  
+**User Requirement**  
+> *As partnership coordinator, I require rapid channel evaluation based on performance analytics to enhance influencer selection efficiency.*  
 
 ---
 
-## Workflow Phases  
-1. System Design  
-2. Solution Build  
-3. Output Validation  
-4. Insight Extraction  
+## Data Source Overview  
+**Essential Data Points**  
+- Creator identifiers  
+- Follower counts  
+- Video view metrics  
+- Upload frequency data  
+
+**Origin**: [Kaggle dataset](https://www.kaggle.com/datasets/bhavyadhingra00020/top-100-social-media-influencers-2024-countrywise?resource=download) (Excel format)  
 
 ---
 
-## Dashboard Architecture  
-**Key Analytical Questions**  
-1. Top 10 channels by subscriber count  
-2. Most active content creators  
-3. Highest viewership channels  
-4. Best performing content ratio  
-5. Optimal audience engagement  
+## Process Stages  
+1. System Architecture  
+2. Solution Development  
+3. Result Verification  
+4. Insight Development  
 
-**Visual Components**  
-- Data tables  
-- Comparison charts  
-- Metric summaries  
+---
+
+## Dashboard Framework  
+**Central Analytical Objectives**  
+1. Leading channels by follower base  
+2. Most prolific content producers  
+3. Top performing video content  
+4. Optimal content engagement ratio  
+5. Peak audience interaction levels  
+
+**Visual Elements**  
+- Information grids  
+- Comparative visualizations  
+- Metric snapshots  
 
 ![dashboard-prototype](assets/images/dashboard_mockup.png)  
 
-### Tech Stack  
-| Tool | Function |  
-|------|----------|  
-| Excel | Initial data inspection |  
-| SQL Server | Data transformation |  
-| Power BI | Visual analytics |  
+### Technology Components  
+| Tool | Purpose |  
+|------|---------|  
+| Excel | Initial data evaluation |  
+| SQL Server | Data processing |  
+| Power BI | Interactive visualization |  
 
 ---
 
-## Implementation Process  
-### Logic Outline  
-1. Dataset acquisition  
-2. Preliminary analysis  
-3. SQL transformation  
-4. Dashboard development  
+## Execution Strategy  
+### Workflow Logic  
+1. Data acquisition  
+2. Exploratory analysis  
+3. SQL processing  
+4. Dashboard deployment  
 
-### Initial Dataset Review  
-- Channel identifiers require parsing  
-- Multilingual headers present  
-- Excess columns needing removal  
+### Preliminary Data Assessment  
+- Channel names need standardization  
+- Mixed-language column headers present  
+- Irrelevant columns requiring elimination  
 
-### Data Refinement  
-**Target Schema**  
-| Column | Type | Constraints |  
-|--------|-----|------------|  
-| channel_name | Text | Required |  
-| total_subscribers | Integer | Required |  
+### Data Optimization  
+**Target Structure**  
+| Column | Type | Requirements |  
+|--------|-----|-------------|  
+| channel_name | Text | Mandatory |  
+| total_subscribers | Integer | Mandatory |  
 
-### Query Implementation  
+### Query Execution  
 ```sql
-/* Channel name extraction */
+/* Channel name standardization */
 SELECT 
   SUBSTRING(NOMBRE, 1, CHARINDEX('@', NOMBRE)-1) AS channel_name,
   total_subscribers
