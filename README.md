@@ -40,6 +40,7 @@
 # Objective 
 
 - What is the key pain point? 
+This scenario is a fictional case study created solely for the purpose of practicing data analysis and visualization skills. The data and context are used hypothetically and do not reflect any actual marketing initiative.
 
 The Head of Marketing wants to find out who the top YouTubers are in 2024 to decide on which YouTubers would be best to run marketing campaigns throughout the rest of the year.
 
